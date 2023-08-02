@@ -85,6 +85,7 @@ body {
 	border-radius: 8px;
 	cursor: pointer;
   padding:10px 55px;
+  text-align: left;
 	font-size: 18px;
 	font-weight: 400;
 	white-space: nowrap;
@@ -98,18 +99,18 @@ body {
 	border-radius: 50%;
 }
 .qstn label:after {
-	height: 19px;
-	width: 19px;
+	height: 20px;
+	width: 20px;
 	border: 2px solid #524eee;
 	left: 19px;
-	top: (calc(50% - 8px));
+	top: (calc(50% - 12px));
 }
 .qstn label:before {
 	background: #524eee;
 	height: 20px;
 	width: 20px;
-	left: 20px;
-	top: (calc(50% - 8px));
+	left: 19px;
+	top: (calc(50% - 12px));
 	transform: scale(5);
 	opacity: 0;
 }
