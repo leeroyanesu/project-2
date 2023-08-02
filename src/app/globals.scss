@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    visibility: visible;
+    transition: ease-in 1s;
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+.fadeOut {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.visible{
+  opacity: 1;
+  transition: opacity .7s;
+}
+.fadeIn{
+  opacity:1;
+  transition: opacity 1s;
+}
+.fadeOut-active{
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+.slideInUp{
+  transform: translateY(100%);
+  animation-name: slideInUp;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: whitesmoke;
+}
+.section{
+  border-radius: 3.5rem;
+  border-color: #6231ec;
+  border-width: 1px;
+  width:30rem;
+  height: auto;
+  text-align: center;
+  padding:1rem;
+}
+.title{
+  color:#8a8a8a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.qstn{
+  border-radius: 30px;
+  padding: 5px 0px;
+  margin:15px 0px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 6px #00000009;
+}
+
+.qstn [type=radio]{
+  display: none;
+}
+.qstn label{
+  color: #6231ec;
+}
+.qstn label {
+	display: block;
+	border-radius: 8px;
+	cursor: pointer;
+  padding:10px 55px;
+	font-size: 18px;
+	font-weight: 400;
+	white-space: nowrap;
+	position: relative;
+	transition: 0.4s ease-in-out 0s;
+}
+.qstn label:after,
+.qstn label:before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+.qstn label:after {
+	height: 19px;
+	width: 19px;
+	border: 2px solid #524eee;
+	left: 19px;
+	top: (calc(50% - 8px));
+}
+.qstn label:before {
+	background: #524eee;
+	height: 20px;
+	width: 20px;
+	left: 20px;
+	top: (calc(50% - 8px));
+	transform: scale(5);
+	opacity: 0;
+}
+.qstn [type="radio"]:checked ~ label {
+	border-color: #524eee;
+}
+.qstn [type="radio"]:checked ~ label::before {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+}
